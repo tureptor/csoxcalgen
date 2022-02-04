@@ -1,0 +1,26 @@
+function baseICS() {
+    return "BEGIN:VCALENDAR\r\n" +
+"VERSION:2.0" +
+"X-WR-CALNAME;VALUE=TEXT:Class\r\n" +
+"X-WR-TIMEZONE:Europe/London\r\n" +
+"PRODID:-//Booster//Calendar 1.0//EN\r\n" +
+"CALSCALE:GREGORIAN\r\n" +
+"METHOD:PUBLISH\r\n" +
+"BEGIN:VTIMEZONE\r\n" +
+"TZID:Europe/London\r\n" +
+"BEGIN:DAYLIGHT\r\n" +
+"TZOFFSETFROM:+0000\r\n" +
+"TZOFFSETTO:+0100\r\n" +
+"DTSTART:19810329T010000\r\n" +
+"RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU\r\n" +
+"TZNAME:BST\r\n" +
+"END:DAYLIGHT\r\n" +
+"BEGIN:STANDARD\r\n" +
+"TZOFFSETFROM:+0100\r\n" +
+"TZOFFSETTO:+0000\r\n" +
+"DTSTART:19961027T020000\r\n" +
+"RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU\r\n" +
+"TZNAME:GMT\r\n" +
+"END:STANDARD\r\n" +
+"END:VTIMEZONE\r\n"
+}
