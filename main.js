@@ -34,6 +34,13 @@ async function startProcessing() {
 function genCheckboxes() {
     var output = document.getElementById('checkboxes');
     HTML = "";
+    events = Object.keys(events).sort().reduce(
+        (obj, key) => { 
+            obj[key] = events[key]; 
+            return obj;
+        }, 
+        {}
+    );
     for (const [key, _] of Object.entries(events)) {
         nospaceskey = key.replace(/ /g,'');
         // make checkbox, have to remove spaces for id
