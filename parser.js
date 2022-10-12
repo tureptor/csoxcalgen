@@ -44,12 +44,12 @@ function getEvents(lines, starts, ends) {
         
         //if practical or class, then group by its day/time
         if (curEvent["CATEGORIES"] != "Lecture") {
-            const matchdatetime = /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/
+            const matchdatetime = /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/;
             const m = curEvent["DTSTART;TZID=Europe/London"].match(matchdatetime);
             const daytime =  " " + weekday[new Date(m.slice(1,4).join("-")).getDay()] + " " + m.slice(4,6).join(":");
-            
+
             allEvents[curEvent["SUMMARY"]+daytime] = allEvents[curEvent["SUMMARY"]+daytime ] || [];
-            allEvents[curEvent["SUMMARY"]+daytime].push(curEvent)
+            allEvents[curEvent["SUMMARY"]+daytime].push(curEvent);
         } else {
             // is lecture so no need to group by start time
             allEvents[curEvent["SUMMARY"]] = allEvents[curEvent["SUMMARY"]] || [];
